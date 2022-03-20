@@ -1,0 +1,12 @@
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\bin\Debug\net6.0\MyFirstProjectListArray.deps.json
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\bin\Debug\net6.0\MyFirstProjectListArray.dll
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\bin\Debug\net6.0\MyFirstProjectListArray.pdb
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\MyFirstProjectListArray.csproj.AssemblyReference.cache
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\MyFirstProjectListArray.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\MyFirstProjectListArray.AssemblyInfoInputs.cache
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\MyFirstProjectListArray.AssemblyInfo.cs
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\MyFirstProjectListArray.csproj.CoreCompileInputs.cache
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\MyFirstProjectListArray.dll
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\refint\MyFirstProjectListArray.dll
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\MyFirstProjectListArray.pdb
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\MyFirstProjectListArray\obj\Debug\net6.0\ref\MyFirstProjectListArray.dll
