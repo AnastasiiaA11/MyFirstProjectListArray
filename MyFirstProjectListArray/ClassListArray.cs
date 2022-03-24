@@ -8,9 +8,10 @@
 
         public ClassListArray()
         {
-            _array = new int[10];        
+            _array = new int[15];        
             Length = 0;
         }
+
         public ClassListArray(int element)
         {
             _array = new int[10];
@@ -30,6 +31,27 @@
                 _array = array;
                 Length = array.Length;
                 UpSize();
+            }
+        }
+
+
+        public int this[int index]
+        {
+            get
+            {
+                if (index < 0 || index >= Length)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                return _array[index];
+            }
+            set
+            {
+                if (index < 0 || index >= Length)
+                {
+                    throw new IndexOutOfRangeException();
+                }
+                _array[index] = value;
             }
         }
 
@@ -58,6 +80,15 @@
         
         public void AddIndex(int index,int value)
         {
+            if (Length < 1)
+            {
+                throw new Exception("Length cannot be less 1");
+            }
+            if (index < 0 || index >= Length)
+            {
+                throw new IndexOutOfRangeException("index does not exist");
+            }
+
             if (Length+1 >= _array.Length)
             {
                 UpSize();
@@ -69,12 +100,16 @@
             Length++;
         }
 
-        public void DeletLast()
+        public void DeleteLast()
         {
-            if (Length>= _array.Length)
+            if (Length == 0)
             {
+                throw new NotImplementedException();
+            }
+                
+            
                 DeletValue();
-            }          
+                     
             Length--;
         }
 
@@ -317,6 +352,49 @@
             Console.WriteLine();
         }
 
+        public override string ToString()
+        {
+            string s = "[";
+
+            for (int i = 0; i < Length; i++)
+            {
+                s += $"{_array[i]} ";
+            }
+            s += "]";
+            return s;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            bool isEqual = true;
+
+            if (obj == null || !(obj is ClassListArray))
+            {
+                isEqual = false;
+            }
+            else
+            {
+                ClassListArray list = (ClassListArray)obj;
+
+                if (list.Length != this.Length)
+                {
+                    isEqual = false;
+                }
+                else
+                {
+                    for (int i = 0; i < this.Length; i++)
+                    {
+                        if (list[i] != this[i])
+                        {
+                            isEqual = false;
+                        }
+                    }
+                }
+            }
+            return isEqual;
+        }
+
+
         private void UpSize()
         {
             int newLength = (int)(_array.Length * 1.5d + 1);
@@ -326,13 +404,16 @@
 
         private void AddBeginning(int index=0)
         {
-            int[] newArr = new int[Length + 1];
-           
+            int[] newArray = new int[Length + 1];
+            for (int i = 0; i < index; i++)
+            {
+                newArray[i] = _array[i];
+            }
             for (int i = index; i < Length; i++)
             {
-                newArr[i + 1] = _array[i];
+                newArray[i + 1] = _array[i];
             }
-            _array = newArr;
+            _array = newArray;
         }
 
         private void Copy(int[] newArray)

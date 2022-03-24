@@ -3,6 +3,7 @@
 
 
 
+
 ClassListArray list = new ClassListArray(new int[] {5,9,4,9,3,4});
 list.Write();
 int x = list.ReturnAmountDeleted(4);
