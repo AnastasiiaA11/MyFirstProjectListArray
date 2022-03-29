@@ -4,11 +4,11 @@
 
 
 
-ClassListArray list = new ClassListArray(new int[] {5,9,4,9,3,4});
+ClassListArray list = new ClassListArray(new int[] {5,9,2,9,3,4});
 list.Write();
-int x = list.ReturnAmountDeleted(4);
-list.Write();
-Console.WriteLine(x);
+//int x = list.ReturnAmountDeleted(4);
+//list.Write();
+//Console.WriteLine(x);
 
 
 
@@ -24,22 +24,25 @@ Console.WriteLine(x);
 
 //list.AddIndex(3, 8);
 //list.Write();
-//list.DeletLast();
+//list.DeleteLast();
 //list.Write();
-//list.DeletStart();
+//list.DeleteStart(5);
 //list.Write();
-//list.DeletIndex(2,2);
+//list.DeletIndex(2, 2);
 //list.Write();
-//list.DelenNEnd(3);
-//list.Write();
-//list.DeletNStart(0);
+//list.DeletNEnd(3);
 ////list.Write();
-//list.DeletNIndex(0,5);
+//list.DeleteNStart(1);
 //list.Write();
-//list.AccessForIndex(5);
+//list.DeletNIndex(1, 3);
 //list.Write();
+//int x=list.AccessForIndex(4);
+//list.Write();
+//Console.WriteLine(x);
 //list.ShowIndex(1);
 //list.Write();
+//list.ReturnRecovery(3);
+//    list.Write();
 //list.ChangeByIndex(1,8);
 //list.Write();
 //list.ReverseArray();
@@ -51,6 +54,8 @@ Console.WriteLine(x);
 //list.SortArrayByAge();
 //list.Write();
 //list.SortArrayDescending();
+//list.Write();
+//list.DeleteValueFirst(2);
 //list.Write();
 
 

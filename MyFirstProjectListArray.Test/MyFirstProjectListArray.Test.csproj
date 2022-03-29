@@ -15,6 +15,15 @@
 
   <ItemGroup>
     <Compile Include="ArrayListNegativeTest\AddIndexNevativeTest.cs" />
+    <Compile Include="ArrayListNegativeTest\AddListLastNegativeTestSource.cs" />
+    <Compile Include="ArrayListNegativeTest\ChangeByIndexNegativeTestSource.cs" />
+    <Compile Include="ArrayListNegativeTest\DeleteLastNegativeTest.cs" />
+    <Compile Include="ArrayListNegativeTest\DeleteNEndTestNegativeSource.cs" />
+    <Compile Include="ArrayListNegativeTest\DeleteNIndexNegativeTestSource.cs" />
+    <Compile Include="ArrayListNegativeTest\DeleteNStartNegativeTestSource.cs" />
+    <Compile Include="ArrayListNegativeTest\DeleteStartTestNegativeSource.cs" />
+    <Compile Include="ArrayListNegativeTest\DeletIndexTestNegativeSource.cs" />
+    <Compile Include="ArrayListNegativeTest\ReturnAmountDeletedNegativeTestSource.cs" />
   </ItemGroup>
 
   <ItemGroup>

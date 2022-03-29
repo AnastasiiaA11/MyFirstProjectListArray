@@ -8,14 +8,14 @@
 
         public ClassListArray()
         {
-            _array = new int[15];        
+            _array = new int[15];
             Length = 0;
         }
 
         public ClassListArray(int element)
         {
             _array = new int[10];
-            _array = new int[element];           
+            _array = new int[element];
             Length = 0;
         }
 
@@ -64,11 +64,11 @@
 
             _array[Length] = value;
             Length++;
-        }        
-                     
+        }
+
         public void AddInStart(int value)
         {
-            if (Length+1 >= _array.Length)
+            if (Length + 1 >= _array.Length)
             {
                 UpSize();
             }
@@ -77,8 +77,8 @@
             _array[0] = value;
             Length++;
         }
-        
-        public void AddIndex(int index,int value)
+
+        public void AddIndex(int index, int value)
         {
             if (Length < 1)
             {
@@ -89,7 +89,7 @@
                 throw new IndexOutOfRangeException("index does not exist");
             }
 
-            if (Length+1 >= _array.Length)
+            if (Length + 1 >= _array.Length)
             {
                 UpSize();
             }
@@ -104,48 +104,79 @@
         {
             if (Length == 0)
             {
-                throw new NotImplementedException();
+                throw new NotImplementedException("Not Implemented");
             }
-                
-            
-                DeletValue();
-                     
+
             Length--;
         }
 
-        public void DeletStart(int value)
+        public void DeleteStart()
         {
-            if (Length >= _array.Length)
+            if (Length == 0)
             {
-                DeletValue();
+                throw new NotImplementedException("Not Implemented");
             }
-            _array[0] = value;
-            Length--;
-        }
 
-        public void DeletIndex(int index,int value)
-        {
+            if (Length <= _array.Length/2)
             {
-                DeletIndex();
+                UpSize();
             }
-            _array[index] = value;
+
+            DeletIndex(0);                    
+
             Length--;
         }
 
-        public void DeletNEnd(int value)
+        public void DeleteIndex(int index)
         {
+            if (Length == 0)
+            {
+                throw new Exception("Not Implemented");
+            }
+            if (index < 0 || index > Length)
+            {
+                throw new IndexOutOfRangeException("Index cannot less zero and ");
+            }
+
+            DeletIndex(index);
+
+            Length--;
+        }
+
+
+        public void DeleteNEnd(int value)
+        {
+            if (Length == 0)
+            {
+                throw new Exception("Not Implemented");
+            }
+            if (Length < value || value < 0)
+            {
+                throw new ArgumentOutOfRangeException("");
+            }
+
             Length = Length - value;
-            int[] newArray=new int[Length];
+            int[] newArray = new int[Length];
             for (int i = 0; i < newArray.Length; i++)
             {
                 newArray[i] = _array[i];
             }
-            _array= newArray;
+            _array = newArray;
 
         }
 
-        public void DeletNStart(int value)
+
+        public void DeleteNStart(int value)
         {
+            if (Length == 0)
+            {
+                throw new Exception("Not Implemented");
+            }
+            if (Length < value || value < 0)
+            {
+                throw new ArgumentOutOfRangeException("");
+            }
+
             Length = Length - value;
             int[] newArray = new int[Length];
             for (int i = 0; i < newArray.Length; i++)
@@ -155,27 +186,38 @@
             _array = newArray;
         }
 
-        public void DeletNIndex(int index,int value)
+        public void DeleteNIndex(int index, int value)
         {
+            if (Length == 0)
+            {
+                throw new Exception("Not Implemented");
+            }
+            if (Length < value || value < 0)
+            {
+                throw new ArgumentOutOfRangeException("");
+            }
+
             Length = Length - value;
             int[] newArray = new int[Length];
 
-            for (int i = index; i < index; i++)
+            for (int i = 0; i < index; i++)
                 newArray[i] = _array[i];
 
             for (int i = index; i < newArray.Length; i++)
-                newArray[i] = _array[i+value];
+                newArray[i] = _array[i + value];
 
             _array = newArray;
         }
 
-        public int ReturnRecovery(int value)
-        {
-            return Length;
+        public int ReturnRecovery()
+        {                     
+          return Length;
         }
+
       
         public int AccessForIndex (int index)
-        {
+
+        {         
             return _array[index];
         }
 
@@ -187,15 +229,25 @@
                 if (_array[i] == value)
                 {
                     
-                    return i;
+                    index= i;
+                    break;
                     
                 }
             }
-            return -1;
+            return index;
         }
 
         public void ChangeByIndex(int index,int value)
         {
+            if (Length == 0)
+            {
+                throw new Exception("ArrayList is empty");
+            }
+            if (index < 0 || index >= Length)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             _array[index] = value;
         }
 
@@ -243,8 +295,10 @@
 
         public int SearchIndexMax()
         {
-            int maxValue = _array[0];
             int index = 0;
+           
+            int maxValue = _array[0];
+            
             for (int i = 1; i < Length; i++)
             {
                 if (_array[i] > maxValue)
@@ -325,9 +379,13 @@
 
         public int ReturnAmountDeleted(int value)
         {
-           
+            if (Length == 0)
+            {
+                throw new Exception("Nothing to delete");
+            }
+
             int sum = 0;
-            for (int i = 1; i < Length; i ++)
+            for (int i = 0; i < Length; i ++)
             {
                 if (_array[i] == value)
                 {
@@ -340,6 +398,66 @@
             }
             Length = Length-sum;
             return sum;
+        }
+
+        public void AddListLast(ClassListArray list)
+        {
+            if (list is null)
+            {
+                throw new NullReferenceException();
+            }
+            for (int i = 0; i < list.Length; i++)
+            {
+                this.Add(list[i]);
+            }
+           
+        }
+        public void AddListFirst(ClassListArray list)
+        {
+            if (list is null)
+            {
+                throw new NullReferenceException();
+            }
+            int newLength = (int)((list.Length + Length) * 1.5d + 1);
+            int[] newArray = new int[newLength];
+
+            
+            for (int i = 0; i < list.Length; i++)
+            {
+                newArray[i] = list[i];
+            }
+            for (int i = 0; i < this.Length; i++)
+            {
+                newArray[i+list.Length] = this[i];
+               
+            }          
+            this.Length = (list.Length + Length);
+            this._array = newArray;
+        }
+        public void AddListByIndex(ClassListArray list, int index)
+        {
+            if (list is null)
+            {
+                throw new NullReferenceException();
+            }
+            int newLength = this.Length + list.Length;
+            int[] newArray = new int[newLength];
+            int count = 0;
+            for (int i = index; i < index + list.Length; i++)
+            {
+                newArray[i] = list[count];
+                count++;
+            }
+            for (int i = 0; i < index; i++)
+            {
+                newArray[i] = this[i];
+            }
+            for (int i = index + list.Length; i < newArray.Length; i++)
+            {
+                newArray[i] = this[i - list.Length];
+            }
+            this.Length = newArray.Length;
+            this._array = newArray;
         }
 
         public void Write()
@@ -427,22 +545,25 @@
 
         private void DeletValue()
         {
-            int newLength = _array.Length -1;
+            int newLength = _array.Length - 1;
             int[] newArray = new int[newLength];
             Copy(newArray);
         }
 
         private void DeletIndex(int index = 0)
         {
-            int[] newArr = new int[Length - 1];
+            int[] newArray = new int[_array.Length - 1];
+            for (int i = 0; i < index; i++)
+            {
+                newArray[i] = _array[i];
+            }
+            for (int i = index; i < _array.Length - 1; i++)
+            {
+                newArray[i] = _array[i + 1];
+            }
+            _array = newArray;
 
-            for (int i = index; i < index; i++)          
-                newArr[i] = _array[i];
-            
-            for (int i=index+1;i< Length; i++)           
-                 newArr[i-1] = _array[i];
-            
-           
+
         }
     }
 }
