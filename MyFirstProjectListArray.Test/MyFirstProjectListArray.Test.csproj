@@ -15,6 +15,8 @@
 
   <ItemGroup>
     <Compile Include="ArrayListNegativeTest\AddIndexNevativeTest.cs" />
+    <Compile Include="ArrayListNegativeTest\AddListByIndexNegativeTestSource.cs" />
+    <Compile Include="ArrayListNegativeTest\AddListFirstNegativeTestSource.cs" />
     <Compile Include="ArrayListNegativeTest\AddListLastNegativeTestSource.cs" />
     <Compile Include="ArrayListNegativeTest\ChangeByIndexNegativeTestSource.cs" />
     <Compile Include="ArrayListNegativeTest\DeleteLastNegativeTest.cs" />

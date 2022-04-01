@@ -10,10 +10,10 @@ namespace MyFirstProjectListArray.Test.ArrayListTestSources
     {
         public IEnumerator GetEnumerator()
         {
-            int index = 2;
-            ClassListArray actuallist = new ClassListArray(new int[] { 1, 2, 3, 4, 5, 6 });
-            ClassListArray actuallistSecond = new ClassListArray(new int[] { 9, 2, 6 });
-            ClassListArray expected = new ClassListArray(new int[] { 1,2, 9, 2, 6, 3, 4, 5, 6 });
+            int index = 1;
+            ClassListArray actuallist = new ClassListArray(new int[] { 1, 2, 3});
+            ClassListArray actuallistSecond = new ClassListArray(new int[] { 9, 2, 6,10 });
+            ClassListArray expected = new ClassListArray(new int[] { 1, 9, 2, 6, 10,2,3 });
 
             yield return new object[] { index,actuallist, actuallistSecond, expected };
         }

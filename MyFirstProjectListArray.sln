@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFirstProjectListArray", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleListArray", "ConsoleListArray\ConsoleListArray.csproj", "{5EC965F3-7446-4E10-9B33-493413584AD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstProjectListArray.Test", "MyFirstProjectListArray.Test\MyFirstProjectListArray.Test.csproj", "{EF3293A1-5125-4480-824A-4CC699D51C2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFirstProjectListArray.Test", "MyFirstProjectListArray.Test\MyFirstProjectListArray.Test.csproj", "{EF3293A1-5125-4480-824A-4CC699D51C2E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

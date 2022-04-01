@@ -1,0 +1,6 @@
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\LinkedList.Test\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\LinkedList.Test\obj\Debug\net6.0\LinkedList.Test.csproj.AssemblyReference.cache
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\LinkedList.Test\obj\Debug\net6.0\LinkedList.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\LinkedList.Test\obj\Debug\net6.0\LinkedList.Test.AssemblyInfoInputs.cache
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\LinkedList.Test\obj\Debug\net6.0\LinkedList.Test.AssemblyInfo.cs
+C:\Users\Альта-Строй\source\repos\MyFirstProjectListArray\LinkedList.Test\obj\Debug\net6.0\LinkedList.Test.csproj.CoreCompileInputs.cache

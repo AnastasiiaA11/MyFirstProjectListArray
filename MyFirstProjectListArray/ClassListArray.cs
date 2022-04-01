@@ -440,24 +440,22 @@
             {
                 throw new NullReferenceException();
             }
-            int newLength = this.Length + list.Length;
+            int newLength = (list.Length + Length);
             int[] newArray = new int[newLength];
-            int count = 0;
-            for (int i = index; i < index + list.Length; i++)
-            {
-                newArray[i] = list[count];
-                count++;
-            }
             for (int i = 0; i < index; i++)
             {
-                newArray[i] = this[i];
+                newArray[i] = _array[i];
             }
-            for (int i = index + list.Length; i < newArray.Length; i++)
+            for (int i = 0; i < list.Length; i++)
             {
-                newArray[i] = this[i - list.Length];
+                newArray[i + index] = list[i];
             }
-            this.Length = newArray.Length;
-            this._array = newArray;
+            for (int i = 0; i < Length - index; i++)
+            {
+                newArray[i + index + list.Length] = _array[i + index];
+            }
+            _array = newArray;
+            Length = newArray.Length;
         }
 
         public void Write()

@@ -4,6 +4,7 @@ using System;
 using MyFirstProjectListArray.Test.ArrayListTestSources;
 using MyFirstProjectListArray.Test.ArrayListNegativeTestSources;
 
+
 namespace MyFirstProjectListArray.Test
 {
     public class Tests
@@ -293,12 +294,23 @@ namespace MyFirstProjectListArray.Test
             Assert.AreEqual(expectedList, actualList);
         }
 
+        [TestCaseSource(typeof(AddListFirstNegativeTestSource))]
+        public void AddListFirstNegativeTest_WhenLeghtNull_ShouldThrowIndexOutOfRangeException(ClassListArray actualList, ClassListArray list)
+        {
+            Assert.Throws<NullReferenceException>(() => list.AddListFirst(list));
+        }
+
         [TestCaseSource(typeof(AddListByIndexTestSource))]
-        public void AddListByIndexTest(int index, ClassListArray list, ClassListArray actualList,ClassListArray expectedList)
+        public void AddListByIndexTest(int index,ClassListArray actualList, ClassListArray list,ClassListArray expectedList)
         {
            
             actualList.AddListByIndex(list,index);
             Assert.AreEqual(expectedList, actualList);
+        }
+        [TestCaseSource(typeof(AddListByIndexNegativeTestSource))]
+        public void AddListByIndexNegativeTest_WhenLeghtNull_ShouldThrowIndexOutOfRangeException(int index, ClassListArray actualList, ClassListArray list)
+        {
+            Assert.Throws<NullReferenceException>(() => list.AddListByIndex(list, index));
         }
     }
 }

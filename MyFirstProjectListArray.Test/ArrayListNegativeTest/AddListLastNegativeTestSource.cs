@@ -10,9 +10,8 @@ namespace MyFirstProjectListArray.Test.ArrayListNegativeTestSources
     {
         public IEnumerator GetEnumerator()
         {
-
             ClassListArray actuallist = new ClassListArray(new int[] { 1, 2, 3, 4, 5, 6 });
-            ClassListArray actuallistSecnd = new ClassListArray(new int[] { });         
+            ClassListArray actuallistSecnd = null; 
 
             yield return new object[] { actuallist, actuallistSecnd};
 
