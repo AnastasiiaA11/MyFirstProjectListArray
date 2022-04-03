@@ -147,10 +147,7 @@ namespace MyFirstProjectListArray
         }
         public void DeleteLast()
         {
-            if (_root == null)
-            {
-                throw new Exception("");
-            }
+            
             Node crnt = _root;
             while(crnt.Next.Next!=null)
             {
@@ -158,6 +155,109 @@ namespace MyFirstProjectListArray
             }
             _tail = crnt;
             _tail.Next = null;                  
+        }
+
+        public void DeleteStart()
+        {
+            if(this==null)
+            {
+                throw new Exception("");
+            }
+           
+            _root=_root.Next;                    
+        }
+
+        public void DeleteIndex(int index)
+        {
+            if (index < 0 || index > Length - 1)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            if (index == 0)
+            {
+                _root = _root.Next;
+            }
+            else
+            {
+                Node crnt = GetNodeByIndex(index - 1);
+                crnt.Next = crnt.Next.Next;
+            }
+        }
+        public void DeleteNEnd(int value)
+        {
+            if (value < 0 || value > Length - 1)
+            {
+                throw new Exception("");
+            }
+            Node crnt = _root;
+           for(int i=1; i<Length-value;i++)
+            {
+                crnt = crnt.Next;
+            }
+            _tail = crnt;
+            _tail.Next = null;
+        }
+
+        public void DeleteNStart(int value)
+        {
+            if (value < 0 || value > Length - 1)
+            {
+                throw new Exception("");
+            }
+            Node crnt = _root;
+            for (int i = 0; i < value; i++)
+            {
+                crnt = crnt.Next;
+            }
+            _root = crnt;
+
+        }
+        public void DeleteNIndex(int index, int value)
+        {
+            if (index<0|| index>Length-1)
+            {
+                throw new Exception("");
+            }
+            Node crnt = GetNodeByIndex(index - 1);
+            Node tmp = GetNodeByIndex(index + value);
+
+            if (index == 0)
+            {
+                _root = tmp;
+            }
+            else
+            {
+                crnt.Next = tmp;
+            }
+            _tail = GetNodeByIndex(Length - 1);
+
+
+        }
+
+        public int  ReturnRecovery()
+        {
+            return Length;
+            
+        }
+        public void AccessForIndex(int index)
+        {
+            Node crnt = GetNodeByIndex(index);
+        }
+        public int ShowIndex(int value)
+        {
+            int index = -1;
+            Node crnt = _root;
+            for(int i = 0; i < Length; i++)
+            {
+                if(crnt.Value==value)
+                {
+                    index = i;
+                    break;
+                }
+                crnt = crnt.Next;
+            }
+            return index;
         }
 
         public override string ToString()
@@ -202,6 +302,16 @@ namespace MyFirstProjectListArray
             }
 
             return true;
+        }
+        private Node GetNodeByIndex(int index)
+        {
+            Node crnt = _root;
+            for (int i = 1; i <= index; i++)
+            {
+                crnt = crnt.Next;
+            }
+
+            return crnt;
         }
     }
 }

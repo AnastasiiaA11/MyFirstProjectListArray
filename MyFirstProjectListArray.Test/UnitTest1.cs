@@ -155,13 +155,13 @@ namespace MyFirstProjectListArray.Test
 
         }
 
-        [TestCaseSource(typeof(ReturnRecoveryTestSource))]
-        public void ReturnRecoveryTest(ClassListArray list, int expected)
-        {
-            ClassListArray actualList = list;
-            int actual=list.ReturnRecovery();
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestCaseSource(typeof(ReturnRecoveryTestSource))]
+        //public void ReturnRecoveryTest(ClassListArray list, int expected)
+        //{
+        //    ClassListArray actualList = list;
+        //    int actual=list.ReturnRecovery();
+        //    Assert.AreEqual(expected, actual);
+        //}
 
         [TestCaseSource(typeof(AccessForIndexTestSource))]
         public void AccessForIndexTest(int index, ClassListArray list, int expected)

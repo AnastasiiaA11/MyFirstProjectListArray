@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyFirstProjectListArray.Test.ArrayListTestSources
 {
-    internal class AccessForIndexTestSource: IEnumerable
+    public class AccessForIndexTestSource: IEnumerable
     {
         public IEnumerator GetEnumerator()
         {
