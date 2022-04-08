@@ -11,21 +11,12 @@ namespace MyFirstProjectListArray.Test.ArrayListTestSources
         public IEnumerator GetEnumerator()
         {
 
-            ClassListArray actuallist = new ClassListArray(new int[] { 2, 2, 1, 4, 8, 6 });
-            int expected = 2;
-
-            yield return new object[] { actuallist, expected };
+            yield return new object[] { new ClassListArray(new int[] { 2, 2, 1, 4, 8, 6 }), 2 };
+            yield return new object[] { new ClassListArray(new int[] { 2, -2, 1, 4, 8, 60 }), 1 };
 
 
-            actuallist = new ClassListArray(new int[] { -22, 2, 1, -14, 11, 6 });
-            expected = 0;
-
-            yield return new object[] { actuallist, expected };
-
-            actuallist = new ClassListArray(new int[] { });
-            expected = 0;
-
-            yield return new object[] { actuallist, expected };
+            yield return new object[] { new LinkedList(new int[] { 2, -2, 1, 4, 80, 6 }), 1};
+            yield return new object[] { new LinkedList(new int[] { 2, 2, 1, 4, 80, -6 }), 5 };
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System;
+using MyFirstProjectListArray.Test.ArrayListNegativeTestSources;
+using MyFirstProjectListArray.Test.ArrayListTestSources;
 using System.Collections;
 using System.Linq;
 using NUnit.Framework;
@@ -122,5 +124,118 @@ namespace MyFirstProjectListArray.Test
             Assert.AreEqual(expected, actual);
         }
 
+        [TestCaseSource(typeof(ChangeByIndexTestLinked))]
+        public void ChangeByIndexTest(int index,int value, LinkedList list, LinkedList expected)
+        {
+            list.ChangeByIndex(index, value);
+            LinkedList actual = list;
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCaseSource(typeof(ChangeByIndexNegativeLinkedTest))]
+        public void ChangeByIndexTest_WhenIndexLessZeroMoreZero_ShouldThrowException(int index, int value, LinkedList list)
+        {
+            Assert.Throws<IndexOutOfRangeException>(() => list.ChangeByIndex(index, value));
+
+        }
+        [TestCaseSource(typeof(ReverseArrayTestLinked))]
+        public void ReverseArrayTest(LinkedList list, LinkedList expected)
+        {
+            list.ReverseArray();
+            LinkedList actual = list;
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCaseSource(typeof(SearchMaxTestLinked))]
+        public void SearchMaxTest(LinkedList list, int expected)
+        {
+            int actual = list.SearchMax();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCaseSource(typeof(SearchMaxNegativeLinkedTest))]
+        public void SearchMaxTest_WhenLenghtZero_ShouldThrowException(LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.SearchMax());
+
+        }
+        [TestCaseSource(typeof(SearchMinTestLinked))]
+        public void SearchMinTest(LinkedList list, int expected)
+        {
+            int actual = list.SearchMin();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCaseSource(typeof(SearchMinNegativeLinkedTest))]
+        public void SearchMinTest_WhenLenghtZero_ShouldThrowException(LinkedList list)
+        {
+            Assert.Throws<Exception>(() => list.SearchMin());
+
+        }
+
+        [TestCaseSource(typeof(SearchMinTestSource))]
+        public void SearchMinTest(IMyList list, int expected)
+        {
+            int actual = list.SearchMin();
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        [TestCaseSource(typeof(SearchIndexMaxTestSource))]
+        public void SearchIndexMaxTest(IMyList list, int expected)
+        {
+            int actual = list.SearchIndexMax();
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestCaseSource(typeof(SearchIndexMinTestSource))]
+        public void SearchIndexMinTest(IMyList list, int expected)
+        {
+            int actual = list.SearchIndexMin();
+            Assert.AreEqual(expected, actual);
+
+        }
+
+
+        [TestCaseSource(typeof(DeleteValueFirstTestSource))]
+        public void DeleteValueFirstTest(int value,IMyList list, IMyList expected)
+        {
+            IMyList actual = list;
+            list.DeleteValueFirst(value);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestCaseSource(typeof(ReturnAmountDeletedTestSource))]
+        public void ReturnAmountDeletedTest(int value, IMyList list, int expected)
+        {
+            int actual = list.ReturnAmountDeleted(value);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCaseSource(typeof(ReturnAmountDeletedNegativeTestSource))]
+        public void ReturnAmountDeletedNegativeTest_WhenLeghtzero_ShouldThrowIndexOutOfRangeException(int value, IMyList list)
+        {
+            Assert.Throws<Exception>(() => list.ReturnAmountDeleted(value));
+        }
+
+        [TestCaseSource(typeof(AddListLastTestLinked))]
+        public void AddListLastTest(LinkedList list, LinkedList extraList, LinkedList expectedList)
+        {
+            list.AddListLast(extraList);
+            LinkedList actualList = list;
+            Assert.AreEqual(expectedList, actualList);
+        }
+
+        [TestCaseSource(typeof(AddListFirstTestLinked))]
+        public void AddListFirstTest(LinkedList list, LinkedList extraList, LinkedList expectedList)
+        {
+            list.AddListFirst(extraList);
+            LinkedList actualList = list;
+            Assert.AreEqual(expectedList, actualList);
+        }
+
+        [TestCaseSource(typeof(AddListByIndexTestLinked))]
+        public void AddListByIndexTest(int index,LinkedList list, LinkedList extraList, LinkedList expectedList)
+        {
+            list.AddListByIndex(extraList,index);
+            LinkedList actualList = list;
+            Assert.AreEqual(expectedList, actualList);
+        }
     }
 }

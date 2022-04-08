@@ -214,63 +214,63 @@ namespace MyFirstProjectListArray.Test
             Assert.AreEqual(expected, actual);
         }
 
-        [TestCaseSource(typeof(SearchMinTestSource))]
-        public void SearchMinTest(ClassListArray list, int expected)
-        {
-            int actual = list.SearchMin();
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestCaseSource(typeof(SearchMinTestSource))]
+        //public void SearchMinTest(ClassListArray list, int expected)
+        //{
+        //    int actual = list.SearchMin();
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [TestCaseSource(typeof(SearchIndexMaxTestSource))]
-        public void SearchIndexMaxTest(ClassListArray list, int expected)
-        {
-            int actual = list.SearchIndexMax();
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestCaseSource(typeof(SearchIndexMaxTestSource))]
+        //public void SearchIndexMaxTest(ClassListArray list, int expected)
+        //{
+        //    int actual = list.SearchIndexMax();
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [TestCaseSource(typeof(SearchIndexMinTestSource))]
-        public void SearchIndexMinTest(ClassListArray list, int expected)
-        {
-            int actual = list.SearchIndexMin();
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestCaseSource(typeof(SearchIndexMinTestSource))]
+        //public void SearchIndexMinTest(ClassListArray list, int expected)
+        //{
+        //    int actual = list.SearchIndexMin();
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [TestCaseSource(typeof(SortArrayByAgeTestSource))]
-        public void SortArrayByAgeTest(ClassListArray list, ClassListArray expectedList)
-        {
-            ClassListArray actualList = list;
-            actualList.SortArrayByAge();
-            Assert.AreEqual(expectedList, actualList);
-        }
+        //[TestCaseSource(typeof(SortArrayByAgeTestSource))]
+        //public void SortArrayByAgeTest(ClassListArray list, ClassListArray expectedList)
+        //{
+        //    ClassListArray actualList = list;
+        //    actualList.SortArrayByAge();
+        //    Assert.AreEqual(expectedList, actualList);
+        //}
 
-        [TestCaseSource(typeof(SortArrayDescendingTestSource))]
-        public void SortArrayDescendingTest(ClassListArray list, ClassListArray expectedList)
-        {
-            ClassListArray actualList = list;
-            actualList.SortArrayDescending();
-            Assert.AreEqual(expectedList, actualList);
-        }
+        //[TestCaseSource(typeof(SortArrayDescendingTestSource))]
+        //public void SortArrayDescendingTest(ClassListArray list, ClassListArray expectedList)
+        //{
+        //    ClassListArray actualList = list;
+        //    actualList.SortArrayDescending();
+        //    Assert.AreEqual(expectedList, actualList);
+        //}
 
-        [TestCaseSource(typeof(DeleteValueFirstTestSource))]
-        public void DeleteValueFirstTest(int value,ClassListArray list, ClassListArray expectedList)
-        {
-            ClassListArray actualList = list;
-            actualList.DeleteValueFirst(value);
-            Assert.AreEqual(expectedList, actualList);
-        }
+        //[TestCaseSource(typeof(DeleteValueFirstTestSource))]
+        //public void DeleteValueFirstTest(int value,ClassListArray list, ClassListArray expectedList)
+        //{
+        //    ClassListArray actualList = list;
+        //    actualList.DeleteValueFirst(value);
+        //    Assert.AreEqual(expectedList, actualList);
+        //}
 
-        [TestCaseSource(typeof(ReturnAmountDeletedTestSource))]
-        public void ReturnAmountDeletedTest(int value, ClassListArray list, int expected)
-        {
-            int actual = list.ReturnAmountDeleted(value);
-            Assert.AreEqual(expected, actual);
-        }
+        //[TestCaseSource(typeof(ReturnAmountDeletedTestSource))]
+        //public void ReturnAmountDeletedTest(int value, ClassListArray list, int expected)
+        //{
+        //    int actual = list.ReturnAmountDeleted(value);
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [TestCaseSource(typeof(ReturnAmountDeletedNegativeTestSource))]
-        public void ReturnAmountDeletedNegativeTest_WhenLeghtzero_ShouldThrowIndexOutOfRangeException(int value, ClassListArray list)
-        {
-            Assert.Throws<Exception>(() => list.ReturnAmountDeleted(value));
-        }
+        //[TestCaseSource(typeof(ReturnAmountDeletedNegativeTestSource))]
+        //public void ReturnAmountDeletedNegativeTest_WhenLeghtzero_ShouldThrowIndexOutOfRangeException(int value, ClassListArray list)
+        //{
+        //    Assert.Throws<Exception>(() => list.ReturnAmountDeleted(value));
+        //}
 
         [TestCaseSource(typeof(AddListLastTestSource))]
         public void AddListLastTest(ClassListArray actualList, ClassListArray list,ClassListArray expectedList)

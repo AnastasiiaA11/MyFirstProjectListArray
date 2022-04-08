@@ -10,29 +10,16 @@ namespace MyFirstProjectListArray.Test.ArrayListTestSources
     {
         public IEnumerator GetEnumerator()
         {
-            int value = 2;
-            ClassListArray actuallist = new ClassListArray(new int[] { 2, 2, 1, 4, 8, 6 });
-            ClassListArray expectedList = new ClassListArray(new int[] { 1, 4, 8, 6 });
+            yield return new object[] {2, new ClassListArray(new int[] { 2, 2, 1, 4, 8, 6 }), new ClassListArray(new int[] { 1, 4, 8, 6 }) };
+            yield return new object[] { -14, new ClassListArray(new int[] { -22, 2, 1, -14, 11, 6 }), new ClassListArray(new int[] { -22, 2, 1, 11, 6 }) };
+            yield return new object[] { 0, new ClassListArray(new int[] { }), new ClassListArray(new int[] {  }) };
+            yield return new object[] { 5, new ClassListArray(new int[] { -22, 2, 1, -14, 11, 6 }), new ClassListArray(new int[] { -22, 2, 1, -14, 11, 6 }) };
 
-            yield return new object[] { value,actuallist, expectedList };
 
-            value = -14;
-            actuallist = new ClassListArray(new int[] { -22, 2, 1, -14, 11, 6 });
-            expectedList = new ClassListArray(new int[] { -22, 2, 1,11, 6 });
-
-            yield return new object[] { value,actuallist, expectedList };
-
-            value = 0;
-            actuallist = new ClassListArray(new int[] { });
-            expectedList = new ClassListArray(new int[] { });
-
-            yield return new object[] { value,actuallist, expectedList };
-
-            value = 5;
-            actuallist = new ClassListArray(new int[] { -22, 2, 1, -14, 11, 6 });
-            expectedList = new ClassListArray(new int[] { -22, 2, 1, -14, 11, 6 });
-
-            yield return new object[] { value, actuallist, expectedList };
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 2, 1, 4, 8, 6 }), new LinkedList(new int[] {2, 1, 4, 8, 6 }) };
+            yield return new object[] { -14, new LinkedList(new int[] { -22, 2, 1, -14, 11, 6 }), new LinkedList(new int[] { -22, 2, 1, 11, 6 }) };
+            yield return new object[] { 0, new LinkedList(new int[] { }), new LinkedList(new int[] { }) };
+            
         }
     }
 }

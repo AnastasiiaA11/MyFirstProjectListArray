@@ -10,19 +10,20 @@ namespace MyFirstProjectListArray.Test.ArrayListTestSources
     {
         public IEnumerator GetEnumerator()
         {
-            int value = 2;
-            ClassListArray actuallist = new ClassListArray(new int[] { 2, 2, 1, 4, 2, 6 });
-            int expected = 3;
-
-            yield return new object[] { value, actuallist, expected};
-
-            value = -22;
-            actuallist = new ClassListArray(new int[] { -22, 2, 1, -22, 11, 6 });
-            expected = 2;
-
-            yield return new object[] { value, actuallist, expected};
-
            
+            yield return new object[] { 2, new ClassListArray(new int[] { 2, 2, 1, 4, 2, 6 }),3 };
+            yield return new object[] { 4, new ClassListArray(new int[] { 2, 15, 4, 4, 2, 9 }), 2 };
+            yield return new object[] { 2, new ClassListArray(new int[] { 2, 2, 1, 4, 2, 6 }), 3 };
+            yield return new object[] { -8, new ClassListArray(new int[] { 2, 15, 4, 4, 2, -8 }), 1 };
+
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 2, 1, 4, 2, 6 }), 3 };
+            yield return new object[] { 4, new LinkedList(new int[] { 2, 15, 4, 4, 2, 9 }), 2 };
+            yield return new object[] { 2, new LinkedList(new int[] { 2, 2, 1, 4, 2, 6 }), 3 };
+            yield return new object[] { -8, new LinkedList(new int[] { 2, 15, 4, 4, 2, -8 }), 1 };
+            yield return new object[] { 1, new LinkedList(new int[] { 6,9,1,2,1 }), 2 };
+           
+
+
 
         }
     }

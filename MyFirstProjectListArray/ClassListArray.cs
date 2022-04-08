@@ -1,8 +1,9 @@
 ﻿namespace MyFirstProjectListArray
 {
-    public class ClassListArray
+    public class ClassListArray: IMyList
     {
         public int Length { get; private set; }
+        public Node _root { get; internal set; }
 
         private int[] _array;
 
